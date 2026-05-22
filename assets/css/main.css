@@ -1,0 +1,87 @@
+/* Custom CSS for Opatech Photography */
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+
+/* Hero Animations */
+@keyframes slow-zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+.animate-slow-zoom {
+    animation: slow-zoom 20s ease-out infinite alternate;
+}
+
+@keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+    animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scroll Fade In Animation */
+.section-fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.section-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Number Counter Animation */
+.stat-number {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Navbar Scrolled State */
+#navbar.scrolled {
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile Menu Active State */
+#mobile-menu.active {
+    display: block;
+    animation: fade-in-down 0.3s ease forwards;
+}
+
+@keyframes fade-in-down {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Filter Button Active State */
+.filter-btn.active {
+    border-color: #b30000;
+    color: white;
+}
+
+/* Selection Color */
+::selection {
+    background-color: #b30000;
+    color: white;
+}
